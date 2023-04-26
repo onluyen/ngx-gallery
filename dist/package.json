@@ -1,0 +1,40 @@
+{
+  "name": "ngx-gallery",
+  "version": "15.2.2",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/onluyen/ngx-gallery"
+  },
+  "bugs": {
+    "email": "losammc@gmail.com",
+    "url": "https://github.com/onluyen/ngx-gallery/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": "^15.2.2",
+    "@angular/core": "^15.2.2",
+    "font-awesome": "^4.7.0"
+  },
+  "dependencies": {
+    "tslib": "^2.4.1"
+  },
+  "module": "fesm2015/ngx-gallery.mjs",
+  "es2020": "fesm2020/ngx-gallery.mjs",
+  "esm2020": "esm2020/ngx-gallery.mjs",
+  "fesm2020": "fesm2020/ngx-gallery.mjs",
+  "fesm2015": "fesm2015/ngx-gallery.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "esm2020": "./esm2020/ngx-gallery.mjs",
+      "es2020": "./fesm2020/ngx-gallery.mjs",
+      "es2015": "./fesm2015/ngx-gallery.mjs",
+      "node": "./fesm2015/ngx-gallery.mjs",
+      "default": "./fesm2020/ngx-gallery.mjs"
+    }
+  },
+  "sideEffects": false
+}
