@@ -22,7 +22,8 @@
     "paths": {
       "ngx-gallery": [
         "dist/ngx-gallery"
-      ]
+      ],
+      "@angular/*": ["node_modules/@angular/*"]
     },
     "useDefineForClassFields": false
   },
