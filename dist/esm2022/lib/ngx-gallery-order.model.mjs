@@ -1,0 +1,6 @@
+export class NgxGalleryOrder {
+    static { this.Column = 1; }
+    static { this.Row = 2; }
+    static { this.Page = 3; }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmd4LWdhbGxlcnktb3JkZXIubW9kZWwuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9wcm9qZWN0cy9uZ3gtZ2FsbGVyeS9zcmMvbGliL25neC1nYWxsZXJ5LW9yZGVyLm1vZGVsLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE1BQU0sT0FBTyxlQUFlO2FBQ2pCLFdBQU0sR0FBRyxDQUFDLENBQUM7YUFDWCxRQUFHLEdBQUcsQ0FBQyxDQUFDO2FBQ1IsU0FBSSxHQUFHLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjbGFzcyBOZ3hHYWxsZXJ5T3JkZXIge1xyXG4gICAgc3RhdGljIENvbHVtbiA9IDE7XHJcbiAgICBzdGF0aWMgUm93ID0gMjtcclxuICAgIHN0YXRpYyBQYWdlID0gMztcclxufVxyXG4iXX0=

@@ -1,0 +1,33 @@
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import * as i0 from "@angular/core";
+export class NgxGalleryArrowsComponent {
+    constructor() {
+        this.onPrevClick = new EventEmitter();
+        this.onNextClick = new EventEmitter();
+    }
+    handlePrevClick() {
+        this.onPrevClick.emit();
+    }
+    handleNextClick() {
+        this.onNextClick.emit();
+    }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.0.2", ngImport: i0, type: NgxGalleryArrowsComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "16.0.2", type: NgxGalleryArrowsComponent, selector: "ngx-gallery-arrows", inputs: { prevDisabled: "prevDisabled", nextDisabled: "nextDisabled", arrowPrevIcon: "arrowPrevIcon", arrowNextIcon: "arrowNextIcon" }, outputs: { onPrevClick: "onPrevClick", onNextClick: "onNextClick" }, ngImport: i0, template: "<div class=\"ngx-gallery-arrow-wrapper ngx-gallery-arrow-left\">\r\n    <div class=\"ngx-gallery-icon ngx-gallery-arrow\" aria-hidden=\"true\" (click)=\"handlePrevClick()\" [class.ngx-gallery-disabled]=\"prevDisabled\">\r\n        <i class=\"ngx-gallery-icon-content {{arrowPrevIcon}}\"></i>\r\n    </div>\r\n</div>\r\n<div class=\"ngx-gallery-arrow-wrapper ngx-gallery-arrow-right\">\r\n    <div class=\"ngx-gallery-icon ngx-gallery-arrow\" aria-hidden=\"true\" (click)=\"handleNextClick()\" [class.ngx-gallery-disabled]=\"nextDisabled\">\r\n        <i class=\"ngx-gallery-icon-content {{arrowNextIcon}}\"></i>\r\n    </div>\r\n</div>", styles: [".ngx-gallery-arrow-wrapper{position:absolute;height:100%;width:1px;display:table;z-index:2000;table-layout:fixed}.ngx-gallery-arrow-left{left:0}.ngx-gallery-arrow-right{right:0}.ngx-gallery-arrow{top:50%;transform:translateY(-50%);cursor:pointer}.ngx-gallery-arrow.ngx-gallery-disabled{opacity:.6;cursor:default}.ngx-gallery-arrow-left .ngx-gallery-arrow{left:10px}.ngx-gallery-arrow-right .ngx-gallery-arrow{right:10px}\n"] }); }
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.0.2", ngImport: i0, type: NgxGalleryArrowsComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'ngx-gallery-arrows', template: "<div class=\"ngx-gallery-arrow-wrapper ngx-gallery-arrow-left\">\r\n    <div class=\"ngx-gallery-icon ngx-gallery-arrow\" aria-hidden=\"true\" (click)=\"handlePrevClick()\" [class.ngx-gallery-disabled]=\"prevDisabled\">\r\n        <i class=\"ngx-gallery-icon-content {{arrowPrevIcon}}\"></i>\r\n    </div>\r\n</div>\r\n<div class=\"ngx-gallery-arrow-wrapper ngx-gallery-arrow-right\">\r\n    <div class=\"ngx-gallery-icon ngx-gallery-arrow\" aria-hidden=\"true\" (click)=\"handleNextClick()\" [class.ngx-gallery-disabled]=\"nextDisabled\">\r\n        <i class=\"ngx-gallery-icon-content {{arrowNextIcon}}\"></i>\r\n    </div>\r\n</div>", styles: [".ngx-gallery-arrow-wrapper{position:absolute;height:100%;width:1px;display:table;z-index:2000;table-layout:fixed}.ngx-gallery-arrow-left{left:0}.ngx-gallery-arrow-right{right:0}.ngx-gallery-arrow{top:50%;transform:translateY(-50%);cursor:pointer}.ngx-gallery-arrow.ngx-gallery-disabled{opacity:.6;cursor:default}.ngx-gallery-arrow-left .ngx-gallery-arrow{left:10px}.ngx-gallery-arrow-right .ngx-gallery-arrow{right:10px}\n"] }]
+        }], propDecorators: { prevDisabled: [{
+                type: Input
+            }], nextDisabled: [{
+                type: Input
+            }], arrowPrevIcon: [{
+                type: Input
+            }], arrowNextIcon: [{
+                type: Input
+            }], onPrevClick: [{
+                type: Output
+            }], onNextClick: [{
+                type: Output
+            }] } });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmd4LWdhbGxlcnktYXJyb3dzLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1nYWxsZXJ5L3NyYy9saWIvbmd4LWdhbGxlcnktYXJyb3dzL25neC1nYWxsZXJ5LWFycm93cy5jb21wb25lbnQudHMiLCIuLi8uLi8uLi8uLi9wcm9qZWN0cy9uZ3gtZ2FsbGVyeS9zcmMvbGliL25neC1nYWxsZXJ5LWFycm93cy9uZ3gtZ2FsbGVyeS1hcnJvd3MuY29tcG9uZW50Lmh0bWwiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBRSxLQUFLLEVBQUUsTUFBTSxFQUFFLFlBQVksRUFBRSxNQUFNLGVBQWUsQ0FBQzs7QUFPdkUsTUFBTSxPQUFPLHlCQUF5QjtJQUx0QztRQVdZLGdCQUFXLEdBQUcsSUFBSSxZQUFZLEVBQUUsQ0FBQztRQUNqQyxnQkFBVyxHQUFHLElBQUksWUFBWSxFQUFFLENBQUM7S0FTNUM7SUFQQyxlQUFlO1FBQ1gsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLEVBQUUsQ0FBQztJQUM1QixDQUFDO0lBRUQsZUFBZTtRQUNYLElBQUksQ0FBQyxXQUFXLENBQUMsSUFBSSxFQUFFLENBQUM7SUFDNUIsQ0FBQzs4R0FmVSx5QkFBeUI7a0dBQXpCLHlCQUF5Qix1UUNQdEMsNm5CQVNNOzsyRkRGTyx5QkFBeUI7a0JBTHJDLFNBQVM7K0JBQ0Usb0JBQW9COzhCQUtyQixZQUFZO3NCQUFwQixLQUFLO2dCQUNHLFlBQVk7c0JBQXBCLEtBQUs7Z0JBQ0csYUFBYTtzQkFBckIsS0FBSztnQkFDRyxhQUFhO3NCQUFyQixLQUFLO2dCQUVJLFdBQVc7c0JBQXBCLE1BQU07Z0JBQ0csV0FBVztzQkFBcEIsTUFBTSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgSW5wdXQsIE91dHB1dCwgRXZlbnRFbWl0dGVyIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XHJcblxyXG5AQ29tcG9uZW50KHtcclxuICBzZWxlY3RvcjogJ25neC1nYWxsZXJ5LWFycm93cycsXHJcbiAgdGVtcGxhdGVVcmw6ICcuL25neC1nYWxsZXJ5LWFycm93cy5jb21wb25lbnQuaHRtbCcsXHJcbiAgc3R5bGVVcmxzOiBbJy4vbmd4LWdhbGxlcnktYXJyb3dzLmNvbXBvbmVudC5zY3NzJ11cclxufSlcclxuZXhwb3J0IGNsYXNzIE5neEdhbGxlcnlBcnJvd3NDb21wb25lbnR7XHJcbiAgQElucHV0KCkgcHJldkRpc2FibGVkOiBib29sZWFuO1xyXG4gIEBJbnB1dCgpIG5leHREaXNhYmxlZDogYm9vbGVhbjtcclxuICBASW5wdXQoKSBhcnJvd1ByZXZJY29uOiBzdHJpbmc7XHJcbiAgQElucHV0KCkgYXJyb3dOZXh0SWNvbjogc3RyaW5nO1xyXG5cclxuICBAT3V0cHV0KCkgb25QcmV2Q2xpY2sgPSBuZXcgRXZlbnRFbWl0dGVyKCk7XHJcbiAgQE91dHB1dCgpIG9uTmV4dENsaWNrID0gbmV3IEV2ZW50RW1pdHRlcigpO1xyXG5cclxuICBoYW5kbGVQcmV2Q2xpY2soKTogdm9pZCB7XHJcbiAgICAgIHRoaXMub25QcmV2Q2xpY2suZW1pdCgpO1xyXG4gIH1cclxuXHJcbiAgaGFuZGxlTmV4dENsaWNrKCk6IHZvaWQge1xyXG4gICAgICB0aGlzLm9uTmV4dENsaWNrLmVtaXQoKTtcclxuICB9XHJcbn1cclxuIiwiPGRpdiBjbGFzcz1cIm5neC1nYWxsZXJ5LWFycm93LXdyYXBwZXIgbmd4LWdhbGxlcnktYXJyb3ctbGVmdFwiPlxyXG4gICAgPGRpdiBjbGFzcz1cIm5neC1nYWxsZXJ5LWljb24gbmd4LWdhbGxlcnktYXJyb3dcIiBhcmlhLWhpZGRlbj1cInRydWVcIiAoY2xpY2spPVwiaGFuZGxlUHJldkNsaWNrKClcIiBbY2xhc3Mubmd4LWdhbGxlcnktZGlzYWJsZWRdPVwicHJldkRpc2FibGVkXCI+XHJcbiAgICAgICAgPGkgY2xhc3M9XCJuZ3gtZ2FsbGVyeS1pY29uLWNvbnRlbnQge3thcnJvd1ByZXZJY29ufX1cIj48L2k+XHJcbiAgICA8L2Rpdj5cclxuPC9kaXY+XHJcbjxkaXYgY2xhc3M9XCJuZ3gtZ2FsbGVyeS1hcnJvdy13cmFwcGVyIG5neC1nYWxsZXJ5LWFycm93LXJpZ2h0XCI+XHJcbiAgICA8ZGl2IGNsYXNzPVwibmd4LWdhbGxlcnktaWNvbiBuZ3gtZ2FsbGVyeS1hcnJvd1wiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiIChjbGljayk9XCJoYW5kbGVOZXh0Q2xpY2soKVwiIFtjbGFzcy5uZ3gtZ2FsbGVyeS1kaXNhYmxlZF09XCJuZXh0RGlzYWJsZWRcIj5cclxuICAgICAgICA8aSBjbGFzcz1cIm5neC1nYWxsZXJ5LWljb24tY29udGVudCB7e2Fycm93TmV4dEljb259fVwiPjwvaT5cclxuICAgIDwvZGl2PlxyXG48L2Rpdj4iXX0=

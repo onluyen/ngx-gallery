@@ -1,0 +1,7 @@
+export class NgxGalleryAnimation {
+    static { this.Fade = 'fade'; }
+    static { this.Slide = 'slide'; }
+    static { this.Rotate = 'rotate'; }
+    static { this.Zoom = 'zoom'; }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmd4LWdhbGxlcnktYW5pbWF0aW9uLm1vZGVsLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vcHJvamVjdHMvbmd4LWdhbGxlcnkvc3JjL2xpYi9uZ3gtZ2FsbGVyeS1hbmltYXRpb24ubW9kZWwudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTSxPQUFPLG1CQUFtQjthQUNyQixTQUFJLEdBQUcsTUFBTSxDQUFDO2FBQ2QsVUFBSyxHQUFHLE9BQU8sQ0FBQzthQUNoQixXQUFNLEdBQUcsUUFBUSxDQUFDO2FBQ2xCLFNBQUksR0FBRyxNQUFNLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY2xhc3MgTmd4R2FsbGVyeUFuaW1hdGlvbiB7XHJcbiAgICBzdGF0aWMgRmFkZSA9ICdmYWRlJztcclxuICAgIHN0YXRpYyBTbGlkZSA9ICdzbGlkZSc7XHJcbiAgICBzdGF0aWMgUm90YXRlID0gJ3JvdGF0ZSc7XHJcbiAgICBzdGF0aWMgWm9vbSA9ICd6b29tJztcclxufVxyXG4iXX0=
