@@ -13,10 +13,10 @@ export class NgxGalleryActionComponent {
         event.stopPropagation();
         event.preventDefault();
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.0.2", ngImport: i0, type: NgxGalleryActionComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
-    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "16.0.2", type: NgxGalleryActionComponent, selector: "ngx-gallery-action", inputs: { icon: "icon", disabled: "disabled", titleText: "titleText" }, outputs: { onClick: "onClick" }, ngImport: i0, template: "<div class=\"ngx-gallery-icon\" [class.ngx-gallery-icon-disabled]=\"disabled\"\r\naria-hidden=\"true\"\r\ntitle=\"{{ titleText }}\"\r\n(click)=\"handleClick($event)\">\r\n    <i class=\"ngx-gallery-icon-content {{ icon }}\"></i>\r\n</div>", styles: [""], changeDetection: i0.ChangeDetectionStrategy.OnPush }); }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.0.1", ngImport: i0, type: NgxGalleryActionComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "16.0.1", type: NgxGalleryActionComponent, selector: "ngx-gallery-action", inputs: { icon: "icon", disabled: "disabled", titleText: "titleText" }, outputs: { onClick: "onClick" }, ngImport: i0, template: "<div class=\"ngx-gallery-icon\" [class.ngx-gallery-icon-disabled]=\"disabled\"\r\naria-hidden=\"true\"\r\ntitle=\"{{ titleText }}\"\r\n(click)=\"handleClick($event)\">\r\n    <i class=\"ngx-gallery-icon-content {{ icon }}\"></i>\r\n</div>", styles: [""], changeDetection: i0.ChangeDetectionStrategy.OnPush }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.0.2", ngImport: i0, type: NgxGalleryActionComponent, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.0.1", ngImport: i0, type: NgxGalleryActionComponent, decorators: [{
             type: Component,
             args: [{ selector: 'ngx-gallery-action', changeDetection: ChangeDetectionStrategy.OnPush, template: "<div class=\"ngx-gallery-icon\" [class.ngx-gallery-icon-disabled]=\"disabled\"\r\naria-hidden=\"true\"\r\ntitle=\"{{ titleText }}\"\r\n(click)=\"handleClick($event)\">\r\n    <i class=\"ngx-gallery-icon-content {{ icon }}\"></i>\r\n</div>" }]
         }], propDecorators: { icon: [{
