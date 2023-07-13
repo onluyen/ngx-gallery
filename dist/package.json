@@ -1,6 +1,6 @@
 {
   "name": "ngx-gallery",
-  "version": "16.1.4",
+  "version": "16.1.0",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/onluyen/ngx-gallery"
@@ -10,12 +10,12 @@
     "url": "https://github.com/onluyen/ngx-gallery/issues"
   },
   "peerDependencies": {
-    "@angular/common": "^16.1.4",
-    "@angular/core": "^16.1.4",
-    "font-awesome": "^4.7.0"
+    "@angular/common": "^16.1.1",
+    "@angular/core": "^16.1.1",
+    "font-awesome": "~4.7.0"
   },
   "dependencies": {
-    "tslib": "^2.5.0"
+    "tslib": "~2.5.0"
   },
   "module": "fesm2022/ngx-gallery.mjs",
   "typings": "index.d.ts",
