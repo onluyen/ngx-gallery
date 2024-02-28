@@ -9,17 +9,17 @@ import { NgxGalleryBulletsComponent } from './ngx-gallery-bullets/ngx-gallery-bu
 import { CommonModule } from '@angular/common';
 import * as i0 from "@angular/core";
 export class NgxGalleryModule {
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.1.4", ngImport: i0, type: NgxGalleryModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
-    static { this.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "16.1.4", ngImport: i0, type: NgxGalleryModule, declarations: [NgxGalleryComponent,
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.2.3", ngImport: i0, type: NgxGalleryModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
+    static { this.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "17.2.3", ngImport: i0, type: NgxGalleryModule, declarations: [NgxGalleryComponent,
             NgxGalleryPreviewComponent,
             NgxGalleryImageComponent,
             NgxGalleryThumbnailsComponent,
             NgxGalleryActionComponent,
             NgxGalleryArrowsComponent,
             NgxGalleryBulletsComponent], imports: [CommonModule], exports: [NgxGalleryComponent] }); }
-    static { this.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "16.1.4", ngImport: i0, type: NgxGalleryModule, imports: [CommonModule] }); }
+    static { this.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "17.2.3", ngImport: i0, type: NgxGalleryModule, imports: [CommonModule] }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.1.4", ngImport: i0, type: NgxGalleryModule, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.2.3", ngImport: i0, type: NgxGalleryModule, decorators: [{
             type: NgModule,
             args: [{
                     declarations: [
