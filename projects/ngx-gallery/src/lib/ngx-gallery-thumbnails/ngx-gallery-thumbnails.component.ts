@@ -34,7 +34,7 @@ export class NgxGalleryThumbnailsComponent implements OnChanges {
   @Input() arrowPrevIcon: string;
   @Input() arrowNextIcon: string;
   @Input() moveSize: number;
-  @Input() order: number;
+  @Input() order: number | any;
   @Input() remainingCount: boolean;
   @Input() lazyLoading: boolean;
   @Input() actions: NgxGalleryAction[];
@@ -247,7 +247,7 @@ export class NgxGalleryThumbnailsComponent implements OnChanges {
       }
   }
 
-  getSafeUrl(image: string): SafeStyle {
+  getSafeUrl(image: string | any): SafeStyle {
       return this.sanitization.bypassSecurityTrustStyle(this.helperService.getBackgroundUrl(image));
   }
 

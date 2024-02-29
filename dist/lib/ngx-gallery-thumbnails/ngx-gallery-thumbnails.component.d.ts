@@ -28,7 +28,7 @@ export declare class NgxGalleryThumbnailsComponent implements OnChanges {
     arrowPrevIcon: string;
     arrowNextIcon: string;
     moveSize: number;
-    order: number;
+    order: number | any;
     remainingCount: boolean;
     lazyLoading: boolean;
     actions: NgxGalleryAction[];
@@ -54,7 +54,7 @@ export declare class NgxGalleryThumbnailsComponent implements OnChanges {
     setDefaultPosition(): void;
     canShowArrows(): boolean;
     validateIndex(): void;
-    getSafeUrl(image: string): SafeStyle;
+    getSafeUrl(image: string | any): SafeStyle;
     private getThumbnailPosition;
     private getThumbnailDimension;
     private getMaxIndex;

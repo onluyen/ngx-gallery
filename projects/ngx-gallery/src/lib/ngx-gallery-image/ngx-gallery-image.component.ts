@@ -203,7 +203,7 @@ export class NgxGalleryImageComponent implements OnInit, OnChanges {
       }
   }
 
-  getSafeUrl(image: string): SafeStyle {
+  getSafeUrl(image: string | any): SafeStyle {
       return this.sanitization.bypassSecurityTrustStyle(this.helperService.getBackgroundUrl(image));
   }
 }

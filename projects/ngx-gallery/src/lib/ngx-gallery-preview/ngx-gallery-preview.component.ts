@@ -54,7 +54,7 @@ export class NgxGalleryPreviewComponent implements OnInit, OnChanges {
   @Input() rotateRightIcon: string;
   @Input() download: boolean;
   @Input() downloadIcon: string;
-  @Input() bullets: string;
+  @Input() bullets: string | any;
 
   @Output() onOpen = new EventEmitter();
   @Output() onClose = new EventEmitter();

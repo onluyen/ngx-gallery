@@ -47,7 +47,7 @@ export declare class NgxGalleryImageComponent implements OnInit, OnChanges {
     setChangeTimeout(): void;
     canShowNext(): boolean;
     canShowPrev(): boolean;
-    getSafeUrl(image: string): SafeStyle;
+    getSafeUrl(image: string | any): SafeStyle;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxGalleryImageComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<NgxGalleryImageComponent, "ngx-gallery-image", never, { "images": { "alias": "images"; "required": false; }; "clickable": { "alias": "clickable"; "required": false; }; "selectedIndex": { "alias": "selectedIndex"; "required": false; }; "arrows": { "alias": "arrows"; "required": false; }; "arrowsAutoHide": { "alias": "arrowsAutoHide"; "required": false; }; "swipe": { "alias": "swipe"; "required": false; }; "animation": { "alias": "animation"; "required": false; }; "size": { "alias": "size"; "required": false; }; "arrowPrevIcon": { "alias": "arrowPrevIcon"; "required": false; }; "arrowNextIcon": { "alias": "arrowNextIcon"; "required": false; }; "autoPlay": { "alias": "autoPlay"; "required": false; }; "autoPlayInterval": { "alias": "autoPlayInterval"; "required": false; }; "autoPlayPauseOnHover": { "alias": "autoPlayPauseOnHover"; "required": false; }; "infinityMove": { "alias": "infinityMove"; "required": false; }; "lazyLoading": { "alias": "lazyLoading"; "required": false; }; "actions": { "alias": "actions"; "required": false; }; "descriptions": { "alias": "descriptions"; "required": false; }; "showDescription": { "alias": "showDescription"; "required": false; }; "bullets": { "alias": "bullets"; "required": false; }; }, { "onClick": "onClick"; "onActiveChange": "onActiveChange"; }, never, never, false, never>;
 }
