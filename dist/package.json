@@ -10,8 +10,8 @@
     "url": "https://github.com/onluyen/ngx-gallery/issues"
   },
   "peerDependencies": {
-    "@angular/common": "~17.2.2",
-    "@angular/core": "~17.2.2",
+    "@angular/common": "~17.1.2",
+    "@angular/core": "~17.1.2",
     "font-awesome": "~4.7.0"
   },
   "dependencies": {
