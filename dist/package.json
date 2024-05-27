@@ -1,6 +1,6 @@
 {
-  "name": "ngx-gallery",
-  "version": "17.2.29",
+  "name": "onluyen-gallery",
+  "version": "1.0.2",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/onluyen/ngx-gallery"
@@ -10,14 +10,14 @@
     "url": "https://github.com/onluyen/ngx-gallery/issues"
   },
   "peerDependencies": {
-    "@angular/common": "~17.1.2",
-    "@angular/core": "~17.1.2",
+    "@angular/common": "^17.3.9",
+    "@angular/core": "^17.3.9",
     "font-awesome": "~4.7.0"
   },
   "dependencies": {
-    "tslib": "~2.5.0"
+    "tslib": "^2.5.0"
   },
-  "module": "fesm2022/ngx-gallery.mjs",
+  "module": "fesm2022/onluyen-gallery.mjs",
   "typings": "index.d.ts",
   "exports": {
     "./package.json": {
@@ -25,9 +25,9 @@
     },
     ".": {
       "types": "./index.d.ts",
-      "esm2022": "./esm2022/ngx-gallery.mjs",
-      "esm": "./esm2022/ngx-gallery.mjs",
-      "default": "./fesm2022/ngx-gallery.mjs"
+      "esm2022": "./esm2022/onluyen-gallery.mjs",
+      "esm": "./esm2022/onluyen-gallery.mjs",
+      "default": "./fesm2022/onluyen-gallery.mjs"
     }
   },
   "sideEffects": false

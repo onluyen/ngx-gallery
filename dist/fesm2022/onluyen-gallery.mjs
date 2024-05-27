@@ -1720,4 +1720,4 @@ class NgxGalleryImage {
  */
 
 export { NgxGalleryAction, NgxGalleryActionComponent, NgxGalleryAnimation, NgxGalleryArrowsComponent, NgxGalleryBulletsComponent, NgxGalleryComponent, NgxGalleryHelperService, NgxGalleryImage, NgxGalleryImageComponent, NgxGalleryImageSize, NgxGalleryLayout, NgxGalleryModule, NgxGalleryOptions, NgxGalleryOrder, NgxGalleryOrderedImage, NgxGalleryPreviewComponent, NgxGalleryThumbnailsComponent };
-//# sourceMappingURL=ngx-gallery.mjs.map
+//# sourceMappingURL=onluyen-gallery.mjs.map

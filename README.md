@@ -1,3 +1,5 @@
+# This repository Customize for Onluyen
+
 # NgxGallery
 Angular image gallery plugin
 Based on [NgxGallery](https://github.com/lukasz-galka/ngx-gallery), Compatible with Angular 15+

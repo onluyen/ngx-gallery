@@ -1,6 +1,6 @@
 {
-  "name": "ngx-gallery",
-  "version": "17.2.29",
+  "name": "onluyen-gallery",
+  "version": "1.0.2",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/onluyen/ngx-gallery"
@@ -12,7 +12,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng-packagr -p ./projects/ngx-gallery/ng-package.json",
+    "build": "ng-packagr -p ./projects/onluyen-gallery/ng-package.json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

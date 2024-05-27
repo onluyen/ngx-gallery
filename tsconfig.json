@@ -19,8 +19,8 @@
       "dom"
     ],
     "paths": {
-      "ngx-gallery": [
-        "dist/ngx-gallery"
+      "onluyen-gallery": [
+        "dist/onluyen-gallery"
       ],
       "@angular/*": [
         "node_modules/@angular/*"
