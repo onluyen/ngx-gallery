@@ -31,7 +31,8 @@ import { NgxGalleryLayout } from './ngx-gallery-layout.model';
     </div>
   `,
     styleUrls: ['./ngx-gallery.component.scss'],
-    providers: [NgxGalleryHelperService]
+    providers: [NgxGalleryHelperService],
+    standalone: false
 })
 export class NgxGalleryComponent implements OnInit, DoCheck, AfterViewInit {
     @Input() options: NgxGalleryOptions[];

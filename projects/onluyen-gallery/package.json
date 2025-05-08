@@ -1,6 +1,6 @@
 {
   "name": "onluyen-gallery",
-  "version": "1.0.3",
+  "version": "19.0.1",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/onluyen/ngx-gallery"
@@ -10,8 +10,8 @@
     "url": "https://github.com/onluyen/ngx-gallery/issues"
   },
   "peerDependencies": {
-    "@angular/common": "~18.2.7",
-    "@angular/core": "~18.2.7",
+    "@angular/common": "~19.2.10",
+    "@angular/core": "~19.2.10",
     "font-awesome": "~4.7.0"
   },
   "dependencies": {
