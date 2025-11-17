@@ -2,8 +2,8 @@
     @for (image of getImages(); track image.index) {
         <div class="ngx-gallery-image"
             [ngClass]="{ 'ngx-gallery-active': selectedIndex == image.index, 'ngx-gallery-inactive-left': selectedIndex > image.index, 'ngx-gallery-inactive-right': selectedIndex < image.index, 'ngx-gallery-clickable': clickable }"
-            [style.background-image]="getSafeUrl(image.src)"
             (click)="handleClick($event, image.index)" >
+            <img class="ngx-gallery-image-img" [src]="image.src" alt="gallery image"/>
             <div class="ngx-gallery-icons-wrapper">
                 @for (action of actions; track $index) {
                     <ngx-gallery-action [icon]="action.icon" [disabled]="action.disabled" [titleText]="action.titleText" (onClick)="action.onClick($event, image.index)"></ngx-gallery-action>

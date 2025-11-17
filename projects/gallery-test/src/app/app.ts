@@ -12,10 +12,29 @@ export class App {
 
   galleryOptions: NgxGalleryOptions[] = [
     {
+      width: "100%",
+      height: "400px",
       imageAnimation: "rotate",
+      imageSize: "contain",
+      thumbnails: true,
+      thumbnailsRows: 1,
+      thumbnailsColumns: 6,
+      thumbnailsPercent: 18,
+      thumbnailMargin: 8,
+      thumbnailSize: "contain",
       previewZoom: true,
       previewRotate: true,
       previewInfinityMove: true,
+    },
+    {
+      breakpoint: 600,
+      width: "100%",
+      height: "250px",
+      imageSize: "contain",
+      thumbnailsColumns: 4,
+      thumbnailsPercent: 28,
+      thumbnailSize: "contain",
+      thumbnailMargin: 6,
     },
   ];
 
