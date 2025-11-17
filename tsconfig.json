@@ -20,17 +20,22 @@
     ],
     "paths": {
       "onluyen-gallery": [
-        "dist/onluyen-gallery"
+        "dist"
       ],
-      "@angular/*": [
-        "node_modules/@angular/*"
-      ]
     },
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true,
+    "strictInjectionParameters": false,
     "strictTemplates": false
-  }
+  },
+  "references": [
+    {
+      "path": "./projects/gallery-test/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/gallery-test/tsconfig.spec.json"
+    }
+  ]
 }
