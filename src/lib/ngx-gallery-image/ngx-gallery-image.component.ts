@@ -42,6 +42,8 @@ export class NgxGalleryImageComponent implements OnInit, OnChanges {
 
   canChangeImage = true;
 
+  arrowsVisible = false;
+
   private timer;
 
   constructor(private sanitization: DomSanitizer,
@@ -49,8 +51,9 @@ export class NgxGalleryImageComponent implements OnInit, OnChanges {
       private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-      if (this.arrows && this.arrowsAutoHide) {
-          this.arrows = false;
+      this.arrowsVisible = !!this.arrows;
+      if (this.arrowsVisible && this.arrowsAutoHide) {
+          this.arrowsVisible = false;
       }
 
       if (this.autoPlay) {
@@ -65,8 +68,8 @@ export class NgxGalleryImageComponent implements OnInit, OnChanges {
   }
 
   @HostListener('mouseenter') onMouseEnter() {
-      if (this.arrowsAutoHide && !this.arrows) {
-          this.arrows = true;
+      if (this.arrowsAutoHide && !this.arrowsVisible) {
+          this.arrowsVisible = true;
       }
 
       if (this.autoPlay && this.autoPlayPauseOnHover) {
@@ -75,8 +78,8 @@ export class NgxGalleryImageComponent implements OnInit, OnChanges {
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-      if (this.arrowsAutoHide && this.arrows) {
-          this.arrows = false;
+      if (this.arrowsAutoHide && this.arrowsVisible) {
+          this.arrowsVisible = false;
       }
 
       if (this.autoPlay && this.autoPlayPauseOnHover) {

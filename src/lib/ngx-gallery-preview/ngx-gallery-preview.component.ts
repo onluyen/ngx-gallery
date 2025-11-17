@@ -26,6 +26,7 @@ export class NgxGalleryPreviewComponent implements OnInit, OnChanges {
   loading = false;
   rotateValue = 0;
   index = 0;
+  arrowsVisible = false;
 
   @Input() images: string[] | SafeResourceUrl[];
   @Input() descriptions: string[];
@@ -83,8 +84,9 @@ export class NgxGalleryPreviewComponent implements OnInit, OnChanges {
       private changeDetectorRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-      if (this.arrows && this.arrowsAutoHide) {
-          this.arrows = false;
+      this.arrowsVisible = !!this.arrows;
+      if (this.arrowsVisible && this.arrowsAutoHide) {
+          this.arrowsVisible = false;
       }
   }
 
@@ -102,14 +104,14 @@ export class NgxGalleryPreviewComponent implements OnInit, OnChanges {
   }
 
   @HostListener('mouseenter') onMouseEnter() {
-      if (this.arrowsAutoHide && !this.arrows) {
-          this.arrows = true;
+      if (this.arrowsAutoHide && !this.arrowsVisible) {
+          this.arrowsVisible = true;
       }
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-      if (this.arrowsAutoHide && this.arrows) {
-          this.arrows = false;
+      if (this.arrowsAutoHide && this.arrowsVisible) {
+          this.arrowsVisible = false;
       }
   }
 

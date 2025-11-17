@@ -18,6 +18,6 @@
 @if (bullets) {
   <ngx-gallery-bullets [count]="images.length" [active]="selectedIndex" (onChange)="show($event)"></ngx-gallery-bullets>
 }
-@if (arrows) {
+@if (arrowsVisible) {
   <ngx-gallery-arrows class="ngx-gallery-image-size-{{size}}" (onPrevClick)="showPrev()" (onNextClick)="showNext()" [prevDisabled]="!canShowPrev()" [nextDisabled]="!canShowNext()" [arrowPrevIcon]="arrowPrevIcon" [arrowNextIcon]="arrowNextIcon"></ngx-gallery-arrows>
 }

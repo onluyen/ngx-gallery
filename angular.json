@@ -50,9 +50,7 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "projects/gallery-test/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": [],
             "tsConfig": "projects/gallery-test/tsconfig.app.json",
             "assets": [
               {
@@ -106,10 +104,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": [],
             "tsConfig": "projects/gallery-test/tsconfig.spec.json",
             "assets": [
               {
