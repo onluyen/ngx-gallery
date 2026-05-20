@@ -1,14 +1,13 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
-    selector: 'ngx-gallery-arrows',
-    templateUrl: './ngx-gallery-arrows.component.html',
-    styleUrls: ['./ngx-gallery-arrows.component.scss'],
-    standalone: true,
-    imports: [CommonModule]
+  selector: "ngx-gallery-arrows",
+  templateUrl: "./ngx-gallery-arrows.component.html",
+  styleUrls: ["./ngx-gallery-arrows.component.scss"],
+  standalone: true,
+  imports: [],
 })
-export class NgxGalleryArrowsComponent{
+export class NgxGalleryArrowsComponent {
   @Input() prevDisabled: boolean;
   @Input() nextDisabled: boolean;
   @Input() arrowPrevIcon: string;
@@ -18,10 +17,10 @@ export class NgxGalleryArrowsComponent{
   @Output() onNextClick = new EventEmitter();
 
   handlePrevClick(): void {
-      this.onPrevClick.emit();
+    this.onPrevClick.emit();
   }
 
   handleNextClick(): void {
-      this.onNextClick.emit();
+    this.onNextClick.emit();
   }
 }

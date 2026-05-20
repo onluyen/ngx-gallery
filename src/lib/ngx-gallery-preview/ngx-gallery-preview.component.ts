@@ -1,21 +1,42 @@
-import { Component, OnInit, Input, OnChanges, Output, EventEmitter, ViewChild, ElementRef, ChangeDetectorRef, SimpleChanges, HostListener, Renderer2 } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SafeResourceUrl, SafeUrl, DomSanitizer, SafeStyle } from '@angular/platform-browser';
-import { NgxGalleryAction } from '../models/ngx-gallery-action.model';
-import { NgxGalleryHelperService } from '../services/ngx-gallery-helper.service';
-import { NgxGalleryArrowsComponent } from '../ngx-gallery-arrows/ngx-gallery-arrows.component';
-import { NgxGalleryActionComponent } from '../ngx-gallery-action/ngx-gallery-action.component';
-import { NgxGalleryBulletsComponent } from '../ngx-gallery-bullets/ngx-gallery-bullets.component';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ElementRef,
+  ChangeDetectorRef,
+  SimpleChanges,
+  HostListener,
+  Renderer2,
+} from "@angular/core";
+
+import {
+  SafeResourceUrl,
+  SafeUrl,
+  DomSanitizer,
+  SafeStyle,
+} from "@angular/platform-browser";
+import { NgxGalleryAction } from "../models/ngx-gallery-action.model";
+import { NgxGalleryHelperService } from "../services/ngx-gallery-helper.service";
+import { NgxGalleryArrowsComponent } from "../ngx-gallery-arrows/ngx-gallery-arrows.component";
+import { NgxGalleryActionComponent } from "../ngx-gallery-action/ngx-gallery-action.component";
+import { NgxGalleryBulletsComponent } from "../ngx-gallery-bullets/ngx-gallery-bullets.component";
 
 @Component({
-    selector: 'ngx-gallery-preview',
-    templateUrl: './ngx-gallery-preview.component.html',
-    styleUrls: ['./ngx-gallery-preview.component.scss'],
-    standalone: true,
-    imports: [CommonModule, NgxGalleryArrowsComponent, NgxGalleryActionComponent, NgxGalleryBulletsComponent]
+  selector: "ngx-gallery-preview",
+  templateUrl: "./ngx-gallery-preview.component.html",
+  styleUrls: ["./ngx-gallery-preview.component.scss"],
+  standalone: true,
+  imports: [
+    NgxGalleryArrowsComponent,
+    NgxGalleryActionComponent,
+    NgxGalleryBulletsComponent,
+  ],
 })
 export class NgxGalleryPreviewComponent implements OnInit, OnChanges {
-
   src: SafeUrl;
   srcIndex: number;
   description: string;
@@ -67,7 +88,7 @@ export class NgxGalleryPreviewComponent implements OnInit, OnChanges {
   @Output() onClose = new EventEmitter();
   @Output() onActiveChange = new EventEmitter<number>();
 
-  @ViewChild('previewImage') previewImage: ElementRef;
+  @ViewChild("previewImage") previewImage: ElementRef;
 
   private isOpen = false;
   private timer;
@@ -79,379 +100,401 @@ export class NgxGalleryPreviewComponent implements OnInit, OnChanges {
 
   private keyDownListener: Function;
 
-  constructor(private sanitization: DomSanitizer, private elementRef: ElementRef,
-      private helperService: NgxGalleryHelperService, private renderer: Renderer2,
-      private changeDetectorRef: ChangeDetectorRef) {}
+  constructor(
+    private sanitization: DomSanitizer,
+    private elementRef: ElementRef,
+    private helperService: NgxGalleryHelperService,
+    private renderer: Renderer2,
+    private changeDetectorRef: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
-      this.arrowsVisible = !!this.arrows;
-      if (this.arrowsVisible && this.arrowsAutoHide) {
-          this.arrowsVisible = false;
-      }
+    this.arrowsVisible = !!this.arrows;
+    if (this.arrowsVisible && this.arrowsAutoHide) {
+      this.arrowsVisible = false;
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-      if (changes['swipe']) {
-          this.helperService.manageSwipe(this.swipe, this.elementRef,
-          'preview', () => this.showNext(), () => this.showPrev());
-      }
+    if (changes["swipe"]) {
+      this.helperService.manageSwipe(
+        this.swipe,
+        this.elementRef,
+        "preview",
+        () => this.showNext(),
+        () => this.showPrev()
+      );
+    }
   }
 
   ngOnDestroy() {
-      if (this.keyDownListener) {
-          this.keyDownListener();
-      }
+    if (this.keyDownListener) {
+      this.keyDownListener();
+    }
   }
 
-  @HostListener('mouseenter') onMouseEnter() {
-      if (this.arrowsAutoHide && !this.arrowsVisible) {
-          this.arrowsVisible = true;
-      }
+  @HostListener("mouseenter") onMouseEnter() {
+    if (this.arrowsAutoHide && !this.arrowsVisible) {
+      this.arrowsVisible = true;
+    }
   }
 
-  @HostListener('mouseleave') onMouseLeave() {
-      if (this.arrowsAutoHide && this.arrowsVisible) {
-          this.arrowsVisible = false;
-      }
+  @HostListener("mouseleave") onMouseLeave() {
+    if (this.arrowsAutoHide && this.arrowsVisible) {
+      this.arrowsVisible = false;
+    }
   }
 
   onKeyDown(e) {
-      if (this.isOpen) {
-          if (this.keyboardNavigation) {
-              if (this.isKeyboardPrev(e)) {
-                  this.showPrev();
-              } else if (this.isKeyboardNext(e)) {
-                  this.showNext();
-              }
-          }
-          if (this.closeOnEsc && this.isKeyboardEsc(e)) {
-              this.close();
-          }
+    if (this.isOpen) {
+      if (this.keyboardNavigation) {
+        if (this.isKeyboardPrev(e)) {
+          this.showPrev();
+        } else if (this.isKeyboardNext(e)) {
+          this.showNext();
+        }
       }
+      if (this.closeOnEsc && this.isKeyboardEsc(e)) {
+        this.close();
+      }
+    }
   }
 
   open(index: number): void {
-      this.onOpen.emit();
+    this.onOpen.emit();
 
-      this.index = index;
-      this.isOpen = true;
-      this.show(true);
+    this.index = index;
+    this.isOpen = true;
+    this.show(true);
 
-      if (this.forceFullscreen) {
-          this.manageFullscreen();
-      }
+    if (this.forceFullscreen) {
+      this.manageFullscreen();
+    }
 
-      this.keyDownListener = this.renderer.listen("window", "keydown", (e) => this.onKeyDown(e));
+    this.keyDownListener = this.renderer.listen("window", "keydown", (e) =>
+      this.onKeyDown(e)
+    );
   }
 
   close(): void {
-      this.isOpen = false;
-      this.closeFullscreen();
-      this.onClose.emit();
+    this.isOpen = false;
+    this.closeFullscreen();
+    this.onClose.emit();
 
-      this.stopAutoPlay();
+    this.stopAutoPlay();
 
-      if (this.keyDownListener) {
-          this.keyDownListener();
-      }
+    if (this.keyDownListener) {
+      this.keyDownListener();
+    }
   }
 
   imageMouseEnter(): void {
-      if (this.autoPlay && this.autoPlayPauseOnHover) {
-          this.stopAutoPlay();
-      }
+    if (this.autoPlay && this.autoPlayPauseOnHover) {
+      this.stopAutoPlay();
+    }
   }
 
   imageMouseLeave(): void {
-      if (this.autoPlay && this.autoPlayPauseOnHover) {
-          this.startAutoPlay();
-      }
+    if (this.autoPlay && this.autoPlayPauseOnHover) {
+      this.startAutoPlay();
+    }
   }
 
   startAutoPlay(): void {
-      if (this.autoPlay) {
-          this.stopAutoPlay();
+    if (this.autoPlay) {
+      this.stopAutoPlay();
 
-          this.timer = setTimeout(() => {
-              if (!this.showNext()) {
-                  if (this.images && this.images.length) {
-                      this.showAtIndex(0);
-                  }
-              }
-          }, this.autoPlayInterval);
-      }
+      this.timer = setTimeout(() => {
+        if (!this.showNext()) {
+          if (this.images && this.images.length) {
+            this.showAtIndex(0);
+          }
+        }
+      }, this.autoPlayInterval);
+    }
   }
 
   stopAutoPlay(): void {
-      if (this.timer) {
-          clearTimeout(this.timer);
-      }
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
   }
 
   showAtIndex(index: number): void {
-      this.index = index;
-      this.show();
+    this.index = index;
+    this.show();
   }
 
   showNext(): boolean {
-      if (this.canShowNext()) {
-          this.index++;
+    if (this.canShowNext()) {
+      this.index++;
 
-          if (this.index === this.images.length) {
-              this.index = 0;
-          }
-
-          this.show();
-          return true;
-      } else {
-          return false;
+      if (this.index === this.images.length) {
+        this.index = 0;
       }
+
+      this.show();
+      return true;
+    } else {
+      return false;
+    }
   }
 
   showPrev(): void {
-      if (this.canShowPrev()) {
-          this.index--;
+    if (this.canShowPrev()) {
+      this.index--;
 
-          if (this.index < 0) {
-              this.index = this.images.length - 1;
-          }
-
-          this.show();
+      if (this.index < 0) {
+        this.index = this.images.length - 1;
       }
+
+      this.show();
+    }
   }
 
   canShowNext(): boolean {
-      if (this.loading) {
-          return false;
-      } else if (this.images) {
-          return this.infinityMove || this.index < this.images.length - 1 ? true : false;
-      } else {
-          return false;
-      }
+    if (this.loading) {
+      return false;
+    } else if (this.images) {
+      return this.infinityMove || this.index < this.images.length - 1
+        ? true
+        : false;
+    } else {
+      return false;
+    }
   }
 
   canShowPrev(): boolean {
-      if (this.loading) {
-          return false;
-      } else if (this.images) {
-          return this.infinityMove || this.index > 0 ? true : false;
-      } else {
-          return false;
-      }
+    if (this.loading) {
+      return false;
+    } else if (this.images) {
+      return this.infinityMove || this.index > 0 ? true : false;
+    } else {
+      return false;
+    }
   }
 
   manageFullscreen(): void {
-      if (this.fullscreen || this.forceFullscreen) {
-          const doc = <any>document;
+    if (this.fullscreen || this.forceFullscreen) {
+      const doc = <any>document;
 
-          if (!doc.fullscreenElement && !doc.mozFullScreenElement
-              && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-              this.openFullscreen();
-          } else {
-              this.closeFullscreen();
-          }
+      if (
+        !doc.fullscreenElement &&
+        !doc.mozFullScreenElement &&
+        !doc.webkitFullscreenElement &&
+        !doc.msFullscreenElement
+      ) {
+        this.openFullscreen();
+      } else {
+        this.closeFullscreen();
       }
+    }
   }
 
   getSafeUrl(image: string): SafeUrl {
-      return image.substr(0, 10) === 'data:image' ?
-          image : this.sanitization.bypassSecurityTrustUrl(image);
+    return image.substr(0, 10) === "data:image"
+      ? image
+      : this.sanitization.bypassSecurityTrustUrl(image);
   }
 
   zoomIn(): void {
-      if (this.canZoomIn()) {
-          this.zoomValue += this.zoomStep;
+    if (this.canZoomIn()) {
+      this.zoomValue += this.zoomStep;
 
-          if (this.zoomValue > this.zoomMax) {
-              this.zoomValue = this.zoomMax;
-          }
+      if (this.zoomValue > this.zoomMax) {
+        this.zoomValue = this.zoomMax;
       }
+    }
   }
 
   zoomOut(): void {
-      if (this.canZoomOut()) {
-          this.zoomValue -= this.zoomStep;
+    if (this.canZoomOut()) {
+      this.zoomValue -= this.zoomStep;
 
-          if (this.zoomValue < this.zoomMin) {
-              this.zoomValue = this.zoomMin;
-          }
-
-          if (this.zoomValue <= 1) {
-              this.resetPosition()
-          }
+      if (this.zoomValue < this.zoomMin) {
+        this.zoomValue = this.zoomMin;
       }
+
+      if (this.zoomValue <= 1) {
+        this.resetPosition();
+      }
+    }
   }
 
   rotateLeft(): void {
-      this.rotateValue -= 90;
+    this.rotateValue -= 90;
   }
 
   rotateRight(): void {
-      this.rotateValue += 90;
+    this.rotateValue += 90;
   }
 
   getTransform(): SafeStyle {
-      return this.sanitization.bypassSecurityTrustStyle('scale(' + this.zoomValue + ') rotate(' + this.rotateValue + 'deg)');
+    return this.sanitization.bypassSecurityTrustStyle(
+      "scale(" + this.zoomValue + ") rotate(" + this.rotateValue + "deg)"
+    );
   }
 
   canZoomIn(): boolean {
-      return this.zoomValue < this.zoomMax ? true : false;
+    return this.zoomValue < this.zoomMax ? true : false;
   }
 
   canZoomOut(): boolean {
-      return this.zoomValue > this.zoomMin ? true : false;
+    return this.zoomValue > this.zoomMin ? true : false;
   }
 
   canDragOnZoom() {
-      return this.zoom && this.zoomValue > 1;
+    return this.zoom && this.zoomValue > 1;
   }
 
   mouseDownHandler(e): void {
-      if (this.canDragOnZoom()) {
-          this.initialX = this.getClientX(e);
-          this.initialY = this.getClientY(e);
-          this.initialLeft = this.positionLeft;
-          this.initialTop = this.positionTop;
-          this.isMove = true;
+    if (this.canDragOnZoom()) {
+      this.initialX = this.getClientX(e);
+      this.initialY = this.getClientY(e);
+      this.initialLeft = this.positionLeft;
+      this.initialTop = this.positionTop;
+      this.isMove = true;
 
-          e.preventDefault();
-      }
+      e.preventDefault();
+    }
   }
 
   mouseUpHandler(e): void {
-      this.isMove = false;
+    this.isMove = false;
   }
 
   mouseMoveHandler(e) {
-      if (this.isMove) {
-          this.positionLeft = this.initialLeft + (this.getClientX(e) - this.initialX);
-          this.positionTop = this.initialTop + (this.getClientY(e) - this.initialY);
-      }
+    if (this.isMove) {
+      this.positionLeft =
+        this.initialLeft + (this.getClientX(e) - this.initialX);
+      this.positionTop = this.initialTop + (this.getClientY(e) - this.initialY);
+    }
   }
 
   private getClientX(e): number {
-      return e.touches && e.touches.length ? e.touches[0].clientX : e.clientX;
+    return e.touches && e.touches.length ? e.touches[0].clientX : e.clientX;
   }
 
   private getClientY(e): number {
-      return e.touches && e.touches.length ? e.touches[0].clientY : e.clientY;
+    return e.touches && e.touches.length ? e.touches[0].clientY : e.clientY;
   }
 
   private resetPosition() {
-      if (this.zoom) {
-          this.positionLeft = 0;
-          this.positionTop = 0;
-      }
+    if (this.zoom) {
+      this.positionLeft = 0;
+      this.positionTop = 0;
+    }
   }
 
   private isKeyboardNext(e): boolean {
-      return e.keyCode === 39 ? true : false;
+    return e.keyCode === 39 ? true : false;
   }
 
   private isKeyboardPrev(e): boolean {
-      return e.keyCode === 37 ? true : false;
+    return e.keyCode === 37 ? true : false;
   }
 
   private isKeyboardEsc(e): boolean {
-      return e.keyCode === 27 ? true : false;
+    return e.keyCode === 27 ? true : false;
   }
 
   private openFullscreen(): void {
-      const element = <any>document.documentElement;
+    const element = <any>document.documentElement;
 
-      if (element.requestFullscreen) {
-          element.requestFullscreen();
-      } else if (element.msRequestFullscreen) {
-          element.msRequestFullscreen();
-      } else if (element.mozRequestFullScreen) {
-          element.mozRequestFullScreen();
-      } else if (element.webkitRequestFullscreen) {
-          element.webkitRequestFullscreen();
-      }
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.msRequestFullscreen) {
+      element.msRequestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) {
+      element.webkitRequestFullscreen();
+    }
   }
 
   private closeFullscreen(): void {
-      if (this.isFullscreen()) {
-          const doc = <any>document;
+    if (this.isFullscreen()) {
+      const doc = <any>document;
 
-          if (doc.exitFullscreen) {
-              doc.exitFullscreen();
-          } else if (doc.msExitFullscreen) {
-              doc.msExitFullscreen();
-          } else if (doc.mozCancelFullScreen) {
-              doc.mozCancelFullScreen();
-          } else if (doc.webkitExitFullscreen) {
-              doc.webkitExitFullscreen();
-          }
+      if (doc.exitFullscreen) {
+        doc.exitFullscreen();
+      } else if (doc.msExitFullscreen) {
+        doc.msExitFullscreen();
+      } else if (doc.mozCancelFullScreen) {
+        doc.mozCancelFullScreen();
+      } else if (doc.webkitExitFullscreen) {
+        doc.webkitExitFullscreen();
       }
+    }
   }
 
   private isFullscreen() {
-      const doc = <any>document;
+    const doc = <any>document;
 
-      return doc.fullscreenElement || doc.webkitFullscreenElement
-          || doc.mozFullScreenElement || doc.msFullscreenElement;
+    return (
+      doc.fullscreenElement ||
+      doc.webkitFullscreenElement ||
+      doc.mozFullScreenElement ||
+      doc.msFullscreenElement
+    );
   }
 
-
-
   private show(first = false) {
-      this.loading = true;
-      this.stopAutoPlay();
+    this.loading = true;
+    this.stopAutoPlay();
 
-      this.onActiveChange.emit(this.index);
+    this.onActiveChange.emit(this.index);
 
-      if (first || !this.animation) {
-          this._show();
-      } else {
-          setTimeout(() => this._show(), 600);
-      }
+    if (first || !this.animation) {
+      this._show();
+    } else {
+      setTimeout(() => this._show(), 600);
+    }
   }
 
   private _show() {
-      this.zoomValue = 1;
-      this.rotateValue = 0;
-      this.resetPosition();
+    this.zoomValue = 1;
+    this.rotateValue = 0;
+    this.resetPosition();
 
-      this.src = this.getSafeUrl(<string>this.images[this.index]);
-      this.srcIndex = this.index;
-      this.description = this.descriptions[this.index];
-      this.changeDetectorRef.detectChanges();
+    this.src = this.getSafeUrl(<string>this.images[this.index]);
+    this.srcIndex = this.index;
+    this.description = this.descriptions[this.index];
+    this.changeDetectorRef.detectChanges();
 
-      setTimeout(() => {
-          if (this.isLoaded(this.previewImage.nativeElement)) {
-              this.loading = false;
-              this.startAutoPlay();
-              this.changeDetectorRef.detectChanges();
-          } else {
-              setTimeout(() => {
-                  if (this.loading) {
-                      this.showSpinner = true;
-                      this.changeDetectorRef.detectChanges();
-                  }
-              })
-
-              this.previewImage.nativeElement.onload = () => {
-                  this.loading = false;
-                  this.showSpinner = false;
-                  this.previewImage.nativeElement.onload = null;
-                  this.startAutoPlay();
-                  this.changeDetectorRef.detectChanges();
-              }
+    setTimeout(() => {
+      if (this.isLoaded(this.previewImage.nativeElement)) {
+        this.loading = false;
+        this.startAutoPlay();
+        this.changeDetectorRef.detectChanges();
+      } else {
+        setTimeout(() => {
+          if (this.loading) {
+            this.showSpinner = true;
+            this.changeDetectorRef.detectChanges();
           }
-      })
+        });
+
+        this.previewImage.nativeElement.onload = () => {
+          this.loading = false;
+          this.showSpinner = false;
+          this.previewImage.nativeElement.onload = null;
+          this.startAutoPlay();
+          this.changeDetectorRef.detectChanges();
+        };
+      }
+    });
   }
 
   private isLoaded(img): boolean {
-      if (!img.complete) {
-          return false;
-      }
+    if (!img.complete) {
+      return false;
+    }
 
-      if (typeof img.naturalWidth !== 'undefined' && img.naturalWidth === 0) {
-          return false;
-      }
+    if (typeof img.naturalWidth !== "undefined" && img.naturalWidth === 0) {
+      return false;
+    }
 
-      return true;
+    return true;
   }
-
 }
