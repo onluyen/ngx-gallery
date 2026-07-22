@@ -7,7 +7,6 @@
   "angularCompilerOptions": {
     "compilationMode": "partial",
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": false,
-    "strictTemplates": false
+    "strictInjectionParameters": false
   }
 }
